@@ -1,0 +1,227 @@
+
+.reg_wrap{
+	width: 100%;
+    display: table;
+    border-top: 2px solid #eb0000;
+    padding-top: 25px;
+}
+
+.reg_inner{
+	width: 718px;
+    display: table;
+    margin: 0 auto;
+    background: #fff;
+    padding: 42px 0 50px 282px;
+}
+
+.reg_inner_ul li{
+	position: relative;
+    height: 48px;
+    margin-bottom: 25px;
+}
+
+.reg_inner_ul li p{
+	    float: left;
+    width: 438px;
+    height: 48px;
+    line-height: 48px;
+    border: 1px solid #bbbbbb;
+    background: #faf9f9;
+    transition: all 0.3s ease-out 0s;
+    position: relative;
+}
+
+.reg_inner_ul li p b.reg_phone{
+	width: 13px;
+    height: 21px;
+    background: url(../img/xsj.png) no-repeat -1px -1px;
+    margin: 14px 16px 0 17px;
+}
+
+.reg_inner_ul li p b{
+	display: inline-block;
+    float: left;
+}
+
+.reg_inner_ul li p input{
+	width: 385px;
+    float: left;
+    height: 48px;
+    background: #faf9f9;
+    line-height: 48px;
+    border: 0;
+    color: #333333;
+    font-size: 14px;
+    font-family: '微软雅黑';
+    outline: none;
+}
+
+.reg_inner_ul li span{
+	display: inline-block;
+    float: left;
+    line-height: 48px;
+    padding-left: 6px;
+    color: #666666;
+    font-size: 14px;
+}
+
+i{
+	font-style: normal;
+}
+
+.reg_inner_ul li span i a{
+	color: #03a9f4;
+}
+
+.reg_inner_ul li p.yz1{
+	width: 259px;
+    float: left;	
+}
+
+.reg_inner_ul li p b.login_yz1{
+	width: 26px;
+    height: 20px;
+    background: url(../img/xsb.png) no-repeat 0 -1px;
+    margin: 14px 14px 0 15px;
+}
+
+.reg_inner_ul li p.yz1 input{
+	width: 204px;
+}
+
+#ehong-code{
+    margin-left: 6px;
+    border: none;
+    width: 90px;
+    height: 38px;
+    display: inline-block;
+    float: left;
+    background: aqua;
+
+}
+#ehong-code font{
+    line-height: 38px;
+    font-size: 25px;
+    margin-left: 5px;
+    
+}
+
+.yz_img1 a{
+	width: 56px;
+	height: 40px;
+	line-height: 40px;
+	position: relative;
+	display:inline-block
+}
+
+.yz_img1 a em{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+	background: url(../img/xxz.png) no-repeat;
+	position: absolute;
+	left: 44px;
+	top: 10px;
+	
+}
+
+.reg_inner_ul li p.w284{
+	width: 284px;
+}
+
+.reg_inner_ul li p b.reg_mes{
+	width: 17px;
+    height: 17px;
+    background: url(../img/sgd.png) no-repeat -2px -1px;
+    margin: 16px 16px 0 17px;
+}
+
+.reg_inner_ul li p.w284 input{
+	    width: 234px;
+}
+
+.va_yanzheng{
+	display: inline-block;
+    float: left;
+    margin-left: 14px;
+    /*_margin-left: 7px;*/
+    width: 138px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    border: 1px solid #bbbbbb;
+    background: #faf9f9;
+    color: #333333;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.reg_inner_ul li p b.reg_psw{
+	width: 19px;
+    height: 21px;
+    background: url(../img/xs.png) no-repeat -2px -1px;
+    margin: 14px 16px 0 17px;
+}
+
+.reg_inner_ul li p.w284 input{
+	width: 234px;
+}
+
+.reg_inner_dl{
+	clear: both;
+    width: 100%;
+}
+
+.reg_inner_dl dt{
+	color: #000000;
+    font-size: 14px;
+    padding: 25px 0;
+}
+
+.reg_inner_dl dt a{
+	color: red;
+}
+
+dd{
+	display: block;
+    /*margin-inline-start: 40px;*/
+}
+
+.reg_inner_dl dd .but1{
+	display: block;
+    width: 440px;
+    height: 50px;
+    line-height: 50px;
+    background: #eb0000;
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    transition: all 0.2s linear 0s;
+    border: 2px solid #eb0000;;
+}
+
+.reg_inner_dl dd .but2{
+	display: block;
+    width: 438px;
+    height: 48px;
+    line-height: 48px;
+    background: #fff;
+    border: 1px solid #03a9f4;
+    text-align: center;
+    color: #03a9f4;
+    font-size: 18px;
+    margin-top: 25px;
+    position: relative;
+}
+
+.reg_inner_dl dd .but2 i{
+	position: absolute;
+    top: 13px;
+    right: 40px;
+    display: block;
+    width: 27px;
+    height: 27px;
+}
+
+
+

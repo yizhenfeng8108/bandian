@@ -1,0 +1,348 @@
+*{
+	margin: 0;
+	padding: 0;
+	    
+}
+
+
+
+img{
+	/*vertical-align: bottom;*/
+}
+body{
+	    font: 12px/22px Arial, Verdana, "微软雅黑", "Lucida Grande", "Lucida Sans Unicode", Helvetica, sans-serif;
+	    background: #F8F8F8;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #000000;
+}
+
+.loginTop{
+	width: 1000px;
+    height: 97px;
+    margin: 0 auto;
+}
+
+.loginTop h2{
+	float: right;
+    color: #333333;
+    font-size: 18px;
+    padding-top: 67px;
+        font-style: normal;
+    font-weight: 400;
+}
+
+.loginTop p{
+	float: left;
+    height: 73px;
+    line-height: 73px;
+    padding-top: 14px;
+}
+
+.loginTop p span{
+	display: inline-block;
+    float: left;
+    height: 73px;
+    
+    padding-right: 21px;
+}
+
+.loginTop p i{
+	display: inline-block;
+    float: left;
+    width: 1px;
+    height: 17px;
+    background: #b5b5b5;
+    margin-top: 27px;
+}
+
+.loginTop p b{
+	display: inline-block;
+    float: left;
+    padding-left: 21px;
+    color: #333333;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.loginBot_Wrap{
+	width: 100%;
+    height: 655px;
+    border-top: 2px solid #eb0000;
+    background: url(../img/pic1.jpg) no-repeat center;
+}
+
+.loginBot_W1000{
+	width: 1000px;
+    margin: 0 auto;
+}
+
+.loginBot{
+	width: 400px;
+    display: table;
+    float: right;
+    margin-top: 74px;
+}
+
+.loginBot h3{
+	position: relative;
+    font-style: normal;
+    font-weight: 400;
+    height: 55px;
+    line-height: 55px;
+    color: #ffffff;
+    font-size: 18px;
+    padding-left: 21px;
+    background:#3e3e2c
+}
+
+.loginBot h3 b{
+	position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 53px;
+    height: 55px;
+    background:url(../img/bjewm.png) no-repeat -4px -1px;
+    cursor: pointer;
+}
+
+.loginBot_fff{
+	width: 100%;
+    background: #fff;
+    display: table;
+    padding-bottom: 0px;
+}
+
+.loginBot_ul{
+	padding: 20px 20px 0;
+}
+
+form{
+	display: block;
+}
+
+.loginBot_ul li{
+	margin-bottom: 20px;
+    display: table;
+    width: 100%;
+}
+
+.loginBot_ul li p{
+	width: 358px;
+    height: 40px;
+    border: 1px solid #bbbbbb;
+    background: #faf9f9;
+    transition: all 0.2s linear 0s;
+}
+
+.loginBot_ul li p b.login_name{
+	    width: 21px;
+    height: 20px;
+    background: url(../img/xr.png) no-repeat 0 -2px;
+    margin: 9px 14px 0 15px;
+}
+
+.loginBot_ul li p b{
+	display: inline-block;
+    float: left;
+}
+
+.loginBot_ul li p input{
+	float: left;
+    width: 308px;
+    height: 40px;
+    background: #faf9f9;
+    line-height: 40px;
+    border: 0;
+    color: #333333;
+    font-size: 14px;
+    font-family: '微软雅黑';
+}
+
+.loginBot_ul li p b.login_psw{
+	width: 19px;
+    height: 21px;
+    background: url(../img/xs.png) no-repeat -2px 0px;
+    margin: 9px 14px 0 15px;
+}
+
+.forget_psw{
+	float: right;
+    color: #ff6600;
+    font-size: 14px;
+}
+
+.loginBot_ul li .check{
+	width: 14px;
+    height: 14px;
+    display: block;
+    float: left;
+    margin: 3px 5px 0 0;
+}
+
+.loginBot_ul li i{
+	color: #666666;
+    font-size: 14px;
+    font-style: normal;
+}
+
+.loginBot_ul li p.yz{
+	width: 169px;
+    float: left;
+}
+
+.loginBot_ul li p b.login_yz{
+	width: 26px;
+    height: 20px;
+    background: url(../img/xsb.png) no-repeat 0 -1px;
+    margin: 9px 14px 0 15px;
+}
+
+.loginBot_ul li p.yz input{
+	width: 110px;
+}
+
+.yz_img{
+	display: inline-block;
+    float: left;
+    height: 42px;
+    padding: 0 0 0 2px;
+    width: 180px;
+}
+
+#ehong-code{
+    margin-left: 6px;
+    border: none;
+    width: 90px;
+    height: 38px;
+    display: inline-block;
+    float: left;
+
+}
+#ehong-code font{
+    line-height: 38px;
+    font-size: 25px;
+    margin-left: 5px;
+    
+}
+
+.yz_img a{
+	width: 56px;
+	height: 40px;
+	line-height: 40px;
+	position: relative;
+	display:inline-block
+}
+
+.yz_img a em{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+	background: url(../img/xxz.png) no-repeat;
+	position: absolute;
+	left: 38px;
+	top: 10px;
+}
+
+.loginBot_ul li .sub_login{
+	width: 360px;
+    height: 42px;
+    line-height: 32px;
+    overflow: hidden;
+    text-align: center;
+    background: #eb0000;
+    border: 0;
+    color: #fff;
+    font-size: 18px;
+    font-family: '微软雅黑';
+    cursor: pointer;
+    transition: all 0.2s linear 0s;
+}
+
+.loginBot_ul li h5{
+	color: #666666;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.loginBot_ul li h5 a{
+	color: #ff6600;
+    font-size: 14px;
+}
+/*二维码*/
+.loginBot_ewm{
+	padding: 30px 20px 0px 20px;
+    display: none;
+}
+
+.loginBot_ewm dl{
+	width: 224px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.loginBot_ewm dl dt{
+	width: 224px;
+    height: 224px;
+}
+
+.loginBot_ewm dl dd{
+	color: #666666;
+    font-size: 14px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.loginBot_ewm p{
+	color: #666666;
+    font-size: 14px;
+}
+
+.loginBot_ewm p a{
+	color: #ff6600;
+    font-size: 14px;
+}
+
+.login_footer{
+	width: 1000px;
+    text-align: center;
+    height: 80px;
+    margin: 0 auto;
+    padding-top: 16px;
+}
+
+.login_footer p{
+	line-height: 32px;
+    color: #666666;
+    font-size: 14px;
+}
+
+.login_footer p a{
+	color: #666666;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

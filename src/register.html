@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			label.error {
+				color: red;
+				position: absolute;
+    			left: 0;
+    			top: 35px;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+		<link rel="stylesheet" type="text/css" href="css/register.css" />
+		<script src="js/jquery-1.12.3.min.js"></script>
+		<script src="js/jquery.idcode.js"></script>
+		<script src="js/jquery-validation/jquery.validate.js"></script>
+		<script src="js/jquery-validation/additional-methods.js"></script>
+		<script src="js/layer/layer.js"></script>
+
+	</head>
+
+	<body>
+		<div class="loginTop">
+			<h2>
+				<a href="#">返回平台首页></a>
+			</h2>
+			<p>
+				<span>
+					<a>
+						<img src="https://www.lecuntao.com/shop/templates/default/images/logoIco.png"/>
+					</a>
+				</span>
+				<i></i>
+				<b>用户注册</b>
+			</p>
+		</div>
+		<div class="reg_wrap">
+			<div class="reg_inner">
+				<form>
+					<ul class="reg_inner_ul">
+						<li>
+							<p>
+								<b class="reg_phone"></b>
+								<input type="text" id="phone" name="uname" placeholder="请输入您的账号">
+							</p>
+							<span>
+								或
+								<i>
+									<a href="#">邮箱注册</a>
+								</i>
+							</span>
+						</li>
+						<li>
+							<p class="yz1">
+								<b class="login_yz1"></b>
+								<input type="text" name="captcha" id="captcha" maxlength="4" size="10" placeholder="请输入验证码">
+							</p>
+							<span class="yz_img1">
+										<span id="idcode"></span>
+							<a href="javascript:;;" onclick="javascript:$.idcode.setCode()">
+								换一张
+								<em></em>
+							</a>
+							</span>
+						</li>
+
+						<li>
+							<p>
+								<b class="reg_psw"></b>
+								<input type="password" id="upwd" name="upwd" placeholder="请输入密码">
+							</p>
+						</li>
+						<li>
+							<p>
+								<b class="reg_psw"></b>
+								<input type="password" id="password_confirm" name="upwd2" placeholder="请再次输入密码">
+							</p>
+						</li>
+					</ul>
+					<dl class="reg_inner_dl">
+						<dt>
+							点击注册表示您同意乐村淘
+							<a href="#" target="_blank">《服务协议》</a>
+						</dt>
+						<dd>
+							<button id="reg_submit" class="but1">注 册</button>
+							<a href="#" class="but2">
+								已有账号?请登录
+								<i></i>
+							</a>
+						</dd>
+					</dl>
+				</form>
+			</div>
+		</div>
+		<div class="login_footer">
+			<p class="bottom_nav">
+				<a href="#">首页</a>
+				<a href="#">招聘英才</a>
+				<a href="#">合作与恰谈</a>
+				<a href="#">联系我们</a>
+				<a href="#">关于乐村淘</a>
+				<a href="#">创始人简介</a>
+			</p>
+
+			Copyright 2007-2014 www.lecuntao.com Inc.,All rights reserved.
+			<br /> 晋ICP备14005286号-1 | 晋B2-20150048
+			<br />
+			<span>
+     	<a href="#">
+     		<img src="img/cn22.png" />
+     	</a>
+     </span>
+		</div>
+	</body>
+
+</html>
+
+<script>
+	$(function() {
+
+		$.idcode.setCode();
+
+		$.validator.addMethod("checkedUser", function(val) {
+			//字母开头不能是数字开头
+			return /^[a-z]\w{5,17}$/i.test(val)
+
+		})
+
+		$("form").validate({
+			// rules 规则
+
+			rules: {
+				uname: {
+					required: true, //必填
+					checkedUser: true
+
+				},
+				upwd: {
+					required: true, //必填
+					rangelength: [6, 16]
+				},
+				upwd2: {
+					required: true, //必填
+					rangelength: [6, 16],
+					equalTo: "#upwd"
+				}
+
+			},
+			// messages 规则是否合法 问题提示
+			messages: {
+				uname: {
+					required: "用户名必填",
+					checkedUser: "用户名必须字母开头,6-18位"
+
+				},
+				upwd: {
+					required: "密码必填", //必填
+					rangelength: "密码长度必须是{0}-{1}"
+
+				},
+				upwd2: {
+					required: "密码必填", //必填
+					rangelength: "密码长度必须是{0}-{1}",
+					equalTo: "2次密码不一致" //当前框要与指定的框,的内容一致
+				}
+
+			},
+			//submitHandler 提交
+			submitHandler: function() {
+
+//				var IsBy = $.idcode.validateCode()
+//				if(!IsBy) {
+//					layer.msg("验证码错误")
+//					return false;
+//				}
+
+				$.ajax({
+					url: "./../sever/register.php",
+					type: "post",
+					data: $("form").serialize(),
+					dataType: "json"
+				}).then(function(res) {
+					var showIcom = res.status == 1 ? 1 : 2
+					layer.confirm(res.msg + ',是否去登录', {
+							icon: showIcom,
+							title: "登录提示",
+							btn: ['是的', '不去'] //按钮
+						},
+						function() {
+							location = "./../src/login.html"
+						},
+						function(index) {
+							layer.close(index)
+						});
+				})
+				return false;
+			},
+
+			errorPlacement: function(error, element) {
+				console.log(error, element)
+				// error.appendTo(element);
+				element.after(error)
+			},
+			success: function(label) {
+				label.addClass("success");
+			},
+		})
+
+	})
+</script>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/jquery.idcode.css" />
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+		<script src="js/jquery-1.12.3.min.js"></script>
+		<script src="js/jquery.idcode.js"></script>
+		<script src="./js/layer/layer.js"></script>
+	</head>
+
+	<body>
+		<div class="loginTop">
+			<h2>
+				<a href="#">返回平台首页></a>
+			</h2>
+			<p>
+				<span>
+					<a>
+						<img src="https://www.lecuntao.com/shop/templates/default/images/logoIco.png"/>
+					</a>
+				</span>
+				<i></i>
+				<b>用户登录</b>
+			</p>
+		</div>
+		<div class="loginBot_Wrap">
+			<div class="loginBot_W1000">
+				<div class="loginBot">
+					<h3>
+						登录乐村淘会员
+						<b class="toggle_login"></b>
+					</h3>
+					<div class="loginBot_fff">
+						<ul class="loginBot_ul">
+							<form>
+								<li>
+									<p>
+										<b class="login_name"></b>
+										<input type="text" placeholder="邮箱/用户名/已验证手机" name="uname" id="user_name" />
+									</p>
+								</li>
+								<li>
+									<p>
+										<b class="login_psw"></b>
+										<input type="password" name="upwd" autocomplete="off" id="password" placeholder="请输入密码">
+									</p>
+								</li>
+								<li>
+									<a href="#" class="forget_psw">忘记密码?</a>
+									<input type="checkbox" name="radio" class="check">
+									<i>两天内自动登录</i>
+								</li>
+								<li>
+									<p class="yz">
+										<b class="login_yz"></b>
+										<input type="text" name="captcha" id="captcha" maxlength="4" size="10" placeholder="请输入验证码">
+									</p>
+									<span class="yz_img">
+										<span id="idcode"></span>
+										<a href="javascript:;;" onclick="javascript:$.idcode.setCode()">
+											换一张
+											<em></em> 
+										</a>
+									</span>
+								</li>
+								<li>
+									<button class="sub_login">登&nbsp;&nbsp;&nbsp;录</button>
+								</li>
+								<li>
+									<h5>
+										还没有账户？
+										<a href="#">立即注册</a>
+									</h5>
+								</li>
+							</form>
+						</ul>
+						<div class="loginBot_ewm">
+							<dl>
+								<dt>
+									<img src="img/m224.png" />
+								</dt>
+								<dd>扫一扫 关注乐村淘</dd>
+							</dl>
+							<p>
+								还没有账户？
+								<a href="#">立即注册</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="login_footer">
+			<p class="bottom_nav">
+				<a href="#">首页</a>
+				<a href="#">招聘英才</a>
+				<a href="#">合作与恰谈</a>
+				<a href="#">联系我们</a>
+				<a href="#">关于乐村淘</a>
+				<a href="#">创始人简介</a>
+			</p>
+			
+    Copyright 2007-2014 www.lecuntao.com Inc.,All rights reserved.
+    <br />
+     晋ICP备14005286号-1 | 晋B2-20150048
+     <br />
+     <span>
+     	<a href="#">
+     		<img src="img/cn22.png" />
+     	</a>
+     </span>
+		</div>
+	</body>
+
+</html>
+<script>
+	
+	$(function () {
+        $.idcode.setCode();//加载生成验证码方法
+
+        $("form").on("submit", function() {
+  			var IsBy = $.idcode.validateCode()
+//          if (!IsBy) {
+//          	layer.msg("验证码错误")
+////              return false;
+//          }
+            $.ajax({
+                url: "./../sever/login.php",
+                data: $("form").serialize(),
+                type: 'post',
+                dataType: "json"
+            }).done(function (res) {
+            
+                var showIcom=res.status==1?1:2
+                layer.confirm(res.msg+',是否去主页',
+                    {
+                        icon: showIcom,
+                        title: "登录提示",
+                        btn: ['是的', '8去'] //按钮
+                    }
+                    , function () {
+                        location = "./index1.html";
+                        //如果登录成功了,就把当前登陆者的信息保存到 localStorage
+                        localStorage.setItem("user",JSON.stringify(res.data));
+                
+                    }, function (index) {
+                        layer.close(index);
+                    });
+            })
+
+
+            return false;
+        })
+
+
+    })
+</script>
